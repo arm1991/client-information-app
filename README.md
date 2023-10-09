@@ -14,7 +14,6 @@ This is a simple web application that allows you to fetch and view information a
 1. Click the "Get Info" button to retrieve client data.
 2. Explore the client information by clicking the buttons for "Info," or "Address
 
-3. 
 ## Technologies Used
 
 - HTML
