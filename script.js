@@ -13,7 +13,7 @@ async function main() {
 		for (let i = 0; i < 10; i++) {
 			let element  = await fetch("https://randomuser.me/api/");
 			element = await element.json();
-			data.push(element.results[0])
+			data.push(element.results[0]);
 		}
         draw(data);
     }
@@ -149,6 +149,6 @@ domElements.getDataBtn.addEventListener("click", () => {
     domElements.getDataDiv.style.display = "none";
     domElements.loadingDiv.style.display = "flex";
     setTimeout(()=>{
-        main()
+        main();
     },3000);
 });
