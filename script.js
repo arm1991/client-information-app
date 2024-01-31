@@ -1,72 +1,68 @@
 let data = [];
-const  domElements = {
-    personsDiv: document.querySelector(".persons"),
-    getDataBtn: document.querySelector(".get-data-button"),
-    getDataDiv: document.querySelector(".get-data"),
-    loadingDiv: document.querySelector(".loading-page"),
-    errorDiv: document.querySelector(".error-page"),
-    errorText: document.querySelector(".error-text")
-}
+const domElements = {
+  personsDiv: document.querySelector(".persons"),
+  getDataBtn: document.querySelector(".get-data-button"),
+  getDataDiv: document.querySelector(".get-data"),
+  loadingDiv: document.querySelector(".loading-box"),
+  errorDiv: document.querySelector(".error-box"),
+  errorText: document.querySelector(".error-text"),
+};
 
 async function main() {
-    try {
-		for (let i = 0; i < 10; i++) {
-			let element  = await fetch("https://randomuser.me/api/");
-			element = await element.json();
-			data.push(element.results[0]);
-		}
-        draw(data);
+  try {
+    for (let i = 0; i < 10; i++) {
+      let element = await fetch("https://randomuser.me/api/");
+      element = await element.json();
+      data.push(element.results[0]);
     }
-    catch(err) {
-        domElements.errorDiv.style.display = "flex";
-        domElements.errorText.textContent = "Error: Couldn't find data. Reload the page";
-        console.log(err);
-    }
-    finally {
-        domElements.loadingDiv.style.display = "none";
-    }
+    draw(data);
+  } catch (err) {
+    domElements.errorDiv.style.display = "flex";
+    domElements.errorText.textContent =
+      "Error: Couldn't find data. Reload the page";
+    console.log(err);
+  } finally {
+    domElements.loadingDiv.style.display = "none";
+    domElements.personsDiv.style.display = "flex";
+  }
 }
 
-
-
 async function draw(data) {
-    domElements.personsDiv.innerHTML = "";
-    const persons = document.createDocumentFragment();
-    data.forEach(element => {
-        persons.appendChild(createPerson(element));
-    });
-    domElements.personsDiv.appendChild(persons);
+  domElements.personsDiv.innerHTML = "";
+  const persons = document.createDocumentFragment();
+  data.forEach((element) => {
+    persons.appendChild(createPerson(element));
+  });
+  domElements.personsDiv.appendChild(persons);
 }
 
 function showDetails(id, string) {
-	
-    const div = document.getElementById(id);
-    const element = data.find((obj) => obj.registered.date === id);
-    switch (string) {
-        case "info":
-            div.innerHTML = createInfo(element);
-            break;
-        case "location":
-            div.innerHTML = createAddress(element[string]);
-            break;
-    }
+  const div = document.getElementById(id);
+  const element = data.find((obj) => obj.registered.date === id);
+  switch (string) {
+    case "info":
+      div.innerHTML = createInfo(element);
+      break;
+    case "location":
+      div.innerHTML = createAddress(element[string]);
+      break;
+  }
 }
 
 function createPerson(el) {
-    const div = document.createElement("div");
-    div.classList.add("person");
-    div.innerHTML = createPersonCard(el, el.name, el.registered.date);
-    return div;
+  const div = document.createElement("div");
+  div.classList = "person center";
+  div.innerHTML = createPersonCard(el, el.name, el.registered.date);
+  return div;
 }
 
 function deletePerson(id) {
-    data = data.filter((person) => person.registered.date !== id);
-	draw(data);
+  data = data.filter((person) => person.registered.date !== id);
+  draw(data);
 }
 
-
 function createAddress(location) {
-    return `
+  return `
         <div class="country">
             <p>Country</p><span>${location.country}</span>
         </div>
@@ -88,8 +84,8 @@ function createAddress(location) {
     `;
 }
 
-function createInfo (el) {
-    return `
+function createInfo(el) {
+  return `
         <div class="username">
             <p>Username</p><span>${el.login.username}</span>
         </div>
@@ -105,11 +101,11 @@ function createInfo (el) {
 		<div class="gender">
            <p>Gender</p><span>${el.gender}</span>
         </div>
-    `
+    `;
 }
 
-function createPersonCard (el, name, id) {
-    return `
+function createPersonCard(el, name, id) {
+  return `
         <div class="person-name">
             <div class="person-photo">
                 <img src="${el.picture.large}" alt="Profile Photo">
@@ -119,10 +115,10 @@ function createPersonCard (el, name, id) {
             </div>
         </div>
         <div class="buttons">
-            <button class="info-btn" onclick="showDetails('${id}','info')">Info</button>
-            <button class="address-btn" onclick="showDetails('${id}','location')">Address</button>
+            <button class="info-btn green-button" onclick="showDetails('${id}','info')">Info</button>
+            <button class="address-btn green-button" onclick="showDetails('${id}','location')">Address</button>
         </div>
-        <div id="${id}" class="info">
+        <div id="${id}" class="info wrap">
             <div class="username">
                 <p>Username</p><span>${el.login.username}</span>
             </div>
@@ -139,16 +135,16 @@ function createPersonCard (el, name, id) {
 				<p>Gender</p><span>${el.gender}</span>
 			</div>
         </div>
-        <div class="delete" onclick="deletePerson('${id}')">
+        <div class="delete center" onclick="deletePerson('${id}')">
             <p class="delete-user">Click To Delete User</p>
         </div>
-    `
+    `;
 }
 
 domElements.getDataBtn.addEventListener("click", () => {
-    domElements.getDataDiv.style.display = "none";
-    domElements.loadingDiv.style.display = "flex";
-    setTimeout(()=>{
-        main();
-    },3000);
+  domElements.getDataDiv.style.display = "none";
+  domElements.loadingDiv.style.display = "flex";
+  setTimeout(() => {
+    main();
+  }, 3000);
 });
