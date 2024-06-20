@@ -1,210 +1,210 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 p {
-  display: inline-block;
+    display: inline-block;
 }
 
 #root {
-  background: #f0f2f5;
-  min-height: 100vh;
+    background: #f0f2f5;
+    min-height: 100vh;
 }
 
 .box {
-  border-radius: 1.3rem;
-  text-align: center;
-  width: 19rem;
-  padding: 1rem;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-  background: #fff;
-  height: 12rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 1.3rem;
+    text-align: center;
+    width: 19rem;
+    padding: 1rem;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background: #fff;
+    height: 12rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .get-data {
-  display: flex;
+    display: flex;
 }
 
 .loading-box {
-  display: none;
+    display: none;
 }
 
 .error-box {
-  display: none;
+    display: none;
 }
 
 .persons {
-  justify-content: space-evenly;
-  margin-top: 2.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  display: none;
+    justify-content: space-evenly;
+    margin-top: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    display: none;
 }
 
 .person {
-  box-shadow: 1rem 1rem 1rem 0 rgb(182, 182, 182);
-  padding: 2rem 2rem 0 2rem;
-  margin: 2.5rem;
-  width: 25rem;
-  height: min-content;
-  flex-direction: column;
-  background-color: white;
-  border-radius: 2.5rem;
+    box-shadow: 1rem 1rem 1rem 0 rgb(182, 182, 182);
+    padding: 2rem 2rem 0 2rem;
+    margin: 2.5rem;
+    width: 25rem;
+    height: min-content;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 2.5rem;
 }
 
 .person-name {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .person-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 1000px;
-  overflow: hidden;
-  margin-bottom: 1.3rem;
+    width: 150px;
+    height: 150px;
+    border-radius: 1000px;
+    overflow: hidden;
+    margin-bottom: 1.3rem;
 }
 
 img {
-  object-position: top;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+    object-position: top;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 .name {
-  text-align: center;
-  width: 100%;
+    text-align: center;
+    width: 100%;
 }
 
 .name h1 {
-  font-size: 1.8rem;
-  font-weight: 600;
+    font-size: 1.8rem;
+    font-weight: 600;
 }
 
 .buttons {
-  padding: 1rem 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
+    padding: 1rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .info {
-  width: 100%;
-  padding:  1rem 0;
-  flex-direction: column;
-  gap: 1rem;
-  font-size: 1rem;
-  font-weight: 400;
-  align-items: center;
-  justify-content: space-evenly;
+    width: 100%;
+    padding: 1rem 0;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .info div {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .info div > div {
-  width: max-content;
+    width: max-content;
 }
 
 .street-details > span {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
-.delete {
-  flex-direction: column;
-  cursor: pointer;
-  margin-top: auto;
-  width: calc(100% + 4rem);
-  padding: 1.5rem 0;
-  border-radius: 0 0 2.5rem 2.5rem;
-  color: #fff;
-  background-color: #1877f2;
-  text-decoration: underline;
-  transition: 0.2s ease background-color;
+.delete-btn {
+    flex-direction: column;
+    cursor: pointer;
+    margin-top: auto;
+    width: calc(100% + 4rem);
+    padding: 1.5rem 0;
+    border-radius: 0 0 2.5rem 2.5rem;
+    color: #fff;
+    background-color: #1877f2;
+    text-decoration: underline;
+    transition: 0.2s ease background-color;
 }
 
-.delete:hover {
-  background-color: rgb(9, 96, 217);
-  color: white;
+.delete-btn:hover {
+    background-color: rgb(9, 96, 217);
+    color: white;
 }
 
 .loading {
-  width: 100px;
-  height: 100px;
-  border: solid 1.3rem;
-  background-color: #fff;
-  border-color: #288e14;
-  border-top-color: #42b72a;
-  border-radius: 100%;
-  animation-name: loading;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+    width: 100px;
+    height: 100px;
+    border: solid 1.3rem;
+    background-color: #fff;
+    border-color: #288e14;
+    border-top-color: #42b72a;
+    border-radius: 100%;
+    animation-name: loading;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
 
 span {
-  text-align: right;
+    text-align: right;
 }
 
 @keyframes loading {
-  100% {
-    transform: rotate(360deg);
-  }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @media (max-width: 414px) {
-  .person {
-    min-height: 40rem;
-    width: 20rem;
-    margin-left: 0;
-    margin-right: 0;
-  }
+    .person {
+        min-height: 40rem;
+        width: 20rem;
+        margin-left: 0;
+        margin-right: 0;
+    }
 
-  * {
-    font-size: 0.8rem;
-    font-weight: 400;
-  }
+    * {
+        font-size: 0.8rem;
+        font-weight: 400;
+    }
 }
 
 .green-button {
-  background-color: #42b72a;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  padding: 0.8rem 2rem;
-  border-radius: 2rem;
-  font-size: 1rem;
-  transition: 0.2s ease background-color;
+    background-color: #42b72a;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    transition: 0.2s ease background-color;
 }
 
 .green-button:hover {
-  background-color: #36a720;
+    background-color: #36a720;
 }
 
 .green-button:active {
-  background-color: #288e14;
+    background-color: #288e14;
 }
 
 .center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrap {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
